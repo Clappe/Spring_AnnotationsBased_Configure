@@ -1,0 +1,32 @@
+Spring 基于注解的配置
+
+    1、基于注解的配置
+        在 XML 注入之前进行注解注入，因此后者的配置将通过两种方式的属性连线被前者重写。
+
+        注解连线在默认情况下在 Spring 容器中不打开。因此，在可以使用基于注解的连线之前，我们将需要在我们的 Spring 配置
+        文件中启用它。
+
+        让我们来看看几个重要的注解，并且了解它们是如何工作的：
+
+         序号	                      注解 & 描述
+           1	          @Required 注解应用于 bean 属性的 setter 方法。
+           2              @Autowired 注解可以应用到 bean 属性的 setter 方法，非 setter 方法，构造函数和属性。
+           3	          @Qualifier 通过指定确切的将被连线的 bean，@Autowired 和 @Qualifier 注解可以用来删除混乱。
+           4	          JSR-250 Annotations Spring 支持 JSR-250 的基础的注解，其中包括了 @Resource，@PostConstruct 和 @PreDestroy 注解。
+
+    2、Spring @Required 注释
+
+        2.1 @Required 注释应用于 bean 属性的 setter 方法，它表明受影响的 bean 属性在配置时必须放在 XML 配置文件中，
+            否则容器就会抛出一个 BeanInitializationException 异常。下面显示的是一个使用 @Required 注释的示例。
+
+        2.2 创建ReqAnnotation_Student.java和ReqAnnotation_Main.java，编写相关代码并配置好bean，然后运行。
+            其中,bean的配置如下：
+                   <context:annotation-config/>
+                    <!--define for student bean-->
+                    <bean id="ReqAnnotation_Student" class="com.RequiredAnnotation.ReqAnnotation_Student">
+                        <property name="name" value="Zara"/>
+                        <!--Try without passing age and check the result(如果属性age没有配置，则会发生初始化异常)-->
+                        <!--property name="age" value="11"/-->
+
+                        <property name="age" value="11"/>
+                    </bean>
