@@ -31,4 +31,20 @@
     <bean id="AutAnnotation_Student" class="com.AutowiredAnnotation.AutAnnotation_Student">
         <property name="name" value="Zara"/>
     </bean>
+
+    <!--defination for profile bean-->
+    <bean id="QuaProfile" class="com.QualifierAnnotation.QuaProflie">
+    </bean>
+
+    <!--defination for student1 bean-->
+    <bean id="student1" class="com.QualifierAnnotation.QuaAnnotation_Student">
+        <property name="name" value="Zara"/>
+        <property name="age" value="11"/>
+    </bean>
+
+    <!--defination for student2 bean-->
+    <bean id="student2" class="com.QualifierAnnotation.QuaAnnotation_Student">
+        <property name="name" value="Swift"/>
+        <property name="age" value="20"/>
+    </bean>
 </beans>

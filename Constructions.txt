@@ -62,3 +62,16 @@ Spring 基于注解的配置
                     <bean id="AutAnnotation_Student" class="com.AutowiredAnnotation.AutAnnotation_Student">
                         <property name="name" value="Zara"/>
                     </bean>
+
+    4、Spring @Qualifier 注释（QuaAnnotation_Student.java、QuaProfile.java、QuaMain.java）
+
+        4.1 可能会有这样一种情况，当你创建多个具有相同类型的 bean 时，并且想要用一个属性只为它们其中的一个进行装配，
+            在这种情况下，你可以使用 @Qualifier 注释和 @Autowired 注释通过指定哪一个真正的 bean 将会被装配来消除混乱。
+
+        4.2 在QuaProfile类的声明中，成员变量student用@Qualifier("student1")声明对象是student1,因此会寻找bean配置中student1
+            的配置。
+            @Autowired
+            @Qualifier("student1")
+            private QuaAnnotation_Student student;
+
+        4.3 在xml文件中，可以为QuaAnnotation_Stuudent类配置两个bean(student1和student2)
