@@ -8,7 +8,27 @@
     <!--define for student bean-->
     <bean id="ReqAnnotation_Student" class="com.RequiredAnnotation.ReqAnnotation_Student">
         <property name="name" value="Zara"/>
-        <!--Try without passing age and check the result-->
+        <!--Try without passing age and check the result(如果属性age没有配置，则会发生初始化异常)-->
+        <!--property name="age" value="11"/-->
+
         <property name="age" value="11"/>
+    </bean>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_SpellChecker" class="com.AutowiredAnnotation.AutAnnotation_SpellChecker"/>
+    <bean id="AutAnnotation_TextEditor" class="com.AutowiredAnnotation.AutAnnotation_TextEditor">
+        <!--roperty name="spellChecker" ref="AutAnnotation_SpellChecker"/-->
+    </bean>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_TextEditor1" class="com.AutowiredAnnotation.AutAnnotation_TextEditor1"/>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_TextEditor3" class="com.AutowiredAnnotation.AutAnnotation_TextEditor3">
+    </bean>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_Student" class="com.AutowiredAnnotation.AutAnnotation_Student">
+        <property name="name" value="Zara"/>
     </bean>
 </beans>

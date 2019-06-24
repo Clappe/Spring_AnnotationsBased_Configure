@@ -13,4 +13,22 @@
 
         <property name="age" value="11"/>
     </bean>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_SpellChecker" class="com.AutowiredAnnotation.AutAnnotation_SpellChecker"/>
+    <bean id="AutAnnotation_TextEditor" class="com.AutowiredAnnotation.AutAnnotation_TextEditor">
+        <!--roperty name="spellChecker" ref="AutAnnotation_SpellChecker"/-->
+    </bean>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_TextEditor1" class="com.AutowiredAnnotation.AutAnnotation_TextEditor1"/>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_TextEditor3" class="com.AutowiredAnnotation.AutAnnotation_TextEditor3">
+    </bean>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="AutAnnotation_Student" class="com.AutowiredAnnotation.AutAnnotation_Student">
+        <property name="name" value="Zara"/>
+    </bean>
 </beans>

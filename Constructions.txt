@@ -30,3 +30,35 @@ Spring 基于注解的配置
 
                         <property name="age" value="11"/>
                     </bean>
+
+    3、Spring @Autowired 注释
+
+        3.1 Setter 方法中的 @Autowired（AutAnnotation_TextEditor.java、AutAnnotation_SpellChecker.java和AutAnnotation_Main.java）
+            你可以在 XML 文件中的 setter 方法中使用 @Autowired 注释来除去 元素。当 Spring遇到一个在 setter 方法中使用
+            的 @Autowired 注释，它会在方法中视图执行 byType 自动连接。
+
+            3.1.1 bean的装配如下：
+                <context:annotation-config></context:annotation-config>
+                <bean id="AutAnnotation_SpellChecker" class="com.AutowiredAnnotation.AutAnnotation_SpellChecker"/>
+                <bean id="AutAnnotation_TextEditor" class="com.AutowiredAnnotation.AutAnnotation_TextEditor">
+                </bean>
+
+        3.2 属性中的 @Autowired（AutAnnotation_TextEditor1.java和AutAnnotation_Main1.java）
+            3.2.1 你可以在属性中使用 @Autowired 注释来除去 setter 方法。当时使用 为自动连接属性传递的时候，
+                   Spring 会将这些传递过来的值或者引用自动分配给那些属性。此时可以不写setter方法。
+
+        3.3 构造函数中的 @Autowired(AutAnnotation_TextEditor3.java和AutAnnotation_Main3.java)
+            3.3.1 你也可以在构造函数中使用 @Autowired。一个构造函数 @Autowired 说明当创建 bean 时，即使在 XML 文件中
+                  没有使用 元素配置 bean ，构造函数也会被自动连接.
+
+        3.4 @Autowired 的（required=false）选项(AutAnnotation_Student.java和AutAnnotation_Stu_Main.java)
+            3.4.1 默认情况下，@Autowired 注释意味着依赖是必须的，它类似于 @Required 注释，然而，你可以使用 @Autowired
+             的 （required=false） 选项关闭默认行为。
+
+             即使你不为 age 属性传递任何参数，下面的示例也会成功运行，但是对于 name 属性则需要一个参数。
+
+             3.4.2 bean的配置如下：
+                    <context:annotation-config></context:annotation-config>
+                    <bean id="AutAnnotation_Student" class="com.AutowiredAnnotation.AutAnnotation_Student">
+                        <property name="name" value="Zara"/>
+                    </bean>
