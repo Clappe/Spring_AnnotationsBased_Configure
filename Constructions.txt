@@ -75,3 +75,14 @@ Spring 基于注解的配置
             private QuaAnnotation_Student student;
 
         4.3 在xml文件中，可以为QuaAnnotation_Stuudent类配置两个bean(student1和student2)
+                <!--defination for student1 bean-->
+                <bean id="student1" class="com.QualifierAnnotation.QuaAnnotation_Student">
+                    <property name="name" value="Zara"/>
+                    <property name="age" value="11"/>
+                </bean>
+
+                <!--defination for student2 bean-->
+                <bean id="student2" class="com.QualifierAnnotation.QuaAnnotation_Student">
+                    <property name="name" value="Swift"/>
+                    <property name="age" value="20"/>
+                </bean>
