@@ -48,9 +48,10 @@
         <property name="age" value="20"/>
     </bean>
 
-    <context:annotation-config></context:annotation-config>
-    <bean id="JSR250Annotation_HelloWorld" class="com.JSR250_Annotation.JSR250Annotation_HelloWorld"
-    init-method="init" destroy-method="destroy">
-        <property name="message" value="HelloWorld!"/>
+    <bean id="EventHandle_HelloWorld" class="com.EventHandle.EventHandle_HelloWorld">
+        <property name="message" value="Hello World!"/>
     </bean>
+
+    <bean id="StartEventHandler" class="com.EventHandle.StartEventHandler"/>
+    <bean id="StopEventHandler" class="com.EventHandle.StopEventHandler"/>
 </beans>

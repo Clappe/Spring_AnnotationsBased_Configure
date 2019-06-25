@@ -48,5 +48,10 @@
         <property name="age" value="20"/>
     </bean>
 
+    <bean id="EventHandle_HelloWorld" class="com.EventHandle.EventHandle_HelloWorld">
+        <property name="message" value="Hello World!"/>
+    </bean>
 
+    <bean id="StartEventHandler" class="com.EventHandle.StartEventHandler"/>
+    <bean id="StopEventHandler" class="com.EventHandle.StopEventHandler"/>
 </beans>
