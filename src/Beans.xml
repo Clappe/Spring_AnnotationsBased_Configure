@@ -54,4 +54,8 @@
 
     <bean id="StartEventHandler" class="com.EventHandle.StartEventHandler"/>
     <bean id="StopEventHandler" class="com.EventHandle.StopEventHandler"/>
+
+    <bean id="CustomEventPublisher" class="com.CustomEvent.CustomEventPublisher"></bean>
+
+    <bean id="CustomEventHandler" class="com.CustomEvent.CustomEventHandler"></bean>
 </beans>

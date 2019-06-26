@@ -194,3 +194,15 @@ Spring 基于注解的配置
                   因此，我们写一个例子来看看事件是如何传播的，以及如何可以用代码来执行基于某些事件所需的任务。
 
             6.3.2 具体例子见package(com.EventHandle)
+
+    7、Spring 中的自定义事件（Custom_Event.java、CustomEventPublisher.java、CustomEventHandler.java和MainApp.java）
+
+        7.1 通过扩展 ApplicationEvent,创建一个事件类 CustomEvent。这个类必须定义一个默认的构造函数，
+            它应该从 ApplicationEvent 类中继承的构造函数。
+
+        7.2 一旦定义事件类，你可以从任何类中发布它，假定 EventClassPublisher 实现了 ApplicationEventPublisherAware。
+            你还需要在 XML 配置文件中声明这个类作为一个 bean，之所以容器可以识别 bean 作为事件发布者，是因为它实现了
+            ApplicationEventPublisherAware 接口。
+
+        7.3 发布的事件可以在一个类中被处理，假定 EventClassHandler 实现了 ApplicationListener 接口，
+            而且实现了自定义事件的 onApplicationEvent 方法。
